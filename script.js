@@ -228,9 +228,10 @@ saveExpense.addEventListener("click", (e) => {
         return;
     }
 
-    const amountValue = parseFloat(Number(expenseAmount.value));
-    console.log(amountValue);
-    if (amountValue === "" || Number.isNaN(Number(amountValue))) {
+    const amountValue = parseFloat((expenseAmount.value));
+
+
+    if (amountValue === "" || Number.isNaN(amountValue)) {
         alert("Expense Amount must be a valid number.");
         return;
     }
@@ -254,15 +255,15 @@ saveExpense.addEventListener("click", (e) => {
             const amount = parseFloat(amountText.replace(/[^0-9.-]+/g, ""));
 
             totalExpense += amount;
-            console.log(totalExpense)
+
         });
 
-        console.log(totalExpense)
+
 
         total_Expense.innerHTML = `${currency_symbol} ${(totalExpense.toFixed(2))}`;
 
         let updatedCurr = total - parseFloat(totalExpense);
-        console.log(updatedCurr)
+
         current = updatedCurr;
         curr_Balance.innerHTML = `${currency_symbol} ${(current).toFixed(2)}`;
 
@@ -560,7 +561,7 @@ async function nowExchange(tocon) {
         current = currentInBase
         totalExpense = expenseInBase
 
-        // console.log(totalInBase, currentInBase, expenseInBase)
+
         currency_symbol = currencySymbol[tocon]
         total_Balance.innerHTML = `${currency_symbol} ${(totalInBase.toFixed(2))}`
         curr_Balance.innerHTML = `${currency_symbol} ${(currentInBase.toFixed(2))}`
