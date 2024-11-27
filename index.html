@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+
+</head>
+
+<body>
+
+
+
+
+    <header>
+        <h1>Personal Expense Tracker</h1>
+
+    </header>
+
+
+    <div class="main_container">
+
+        <div class="left_side">
+            <div class="income_expense_overview ">
+                <div class="total_balance">
+                    <span>Total Budget</span>
+                    <p class="t_balance">&#8377 0</p>
+                </div>
+                <div class="Current_balance">
+                    <span>Current Budget</span>
+                    <p class="curr_balance">&#8377 0</p>
+                </div>
+                <div class="current_expense">
+                    <span>Total expense</span>
+                    <p class="total_expense">&#8377 0</p>
+                </div>
+            </div>
+
+
+            <div class="income_source">
+
+                <div class="budget_exchange_symbol">
+                    <button class="add_Income">
+                        Set Budget
+                    </button>
+
+                    <div class="convert_and_symbol">
+                        <input type="text" placeholder="To currency" class="to_exchange">
+                        <button class="symbol_btn">Symbol</button>
+                        <button class="exchange_money">Exchange</button>
+
+                    </div>
+                </div>
+
+
+
+                <div class="input_balance">
+                    <input type="number" placeholder="Budget...?" class="user_Income">
+                    <button class="add_balance">Budget</button>
+
+                </div>
+
+
+
+            </div>
+            <div class="cancont">
+
+                <div class="chart_button">
+
+                    <button class="donut">doughnut</button>
+
+                </div>
+                <canvas id="expensePieChart" class="graph" width="400" height="400">
+
+                </canvas>
+
+            </div>
+
+
+
+
+
+        </div>
+
+        <div class="right_side">
+
+            <div class="transactions_filter_add">
+                <div class="theme_part">
+                    <button class="dark-theme">Dark</button>
+                </div>
+                <h2 class="lttr">Latest Transactions</h2>
+
+                <button class="add_expense">
+                    add transaction
+                </button>
+
+
+            </div>
+
+            <form class="add_transaction">
+                <input type="text" placeholder="e.g - shopping" class="name" required>
+                <input type="date" class="date" required>
+                <input type="text" placeholder="Amount" class="amount" required>
+                <button class="addexpense">Add</button>
+            </form>
+
+            <div class="all_expense_search_download">
+                <form action="#" class="search_transaction">
+                    <i class="fa-fas fas fa-search"></i>
+                    <input type="text" placeholder="Search Here" class="search_expense">
+                </form>
+
+                <button class="downlaod_btn">
+                    <i class="fa-fas fas fa-arrow-alt-circle-down"></i>
+
+                    download
+                </button>
+            </div>
+
+            <table class="data_table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Date</th>
+                        <th>Amount</th>
+                        <th>Action</th>
+
+                    </tr>
+                </thead>
+
+
+            </table>
+        </div>
+
+
+        <div class="exchangeRate_ui">
+            <form class="currency">
+                <div class="ex">
+                    <input type="number" placeholder="Amount.." class="amt">
+                    <input type="text" placeholder="From currency" class="from">
+                    <input type="text" placeholder="To currency" class="to">
+                </div>
+
+
+                <div class="switch_exchangebtn">
+                    <button class="switch">Switch</button>
+                    <button class="curr"> Get rates</button>
+                </div>
+
+            </form>
+
+            <div class="exchange_rate_view">
+                <p class="rate_view">Exchange rate is loading...</p>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="script.js"></script>
+</body>
+
+
+</html>

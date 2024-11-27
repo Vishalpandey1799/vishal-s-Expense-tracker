@@ -1,0 +1,714 @@
+:root {
+    /* --primary: #7c3aed; */
+    --primary: rgb(53, 53, 241);
+    --primary-light: #8b5cf6;
+    --success: #10b981;
+    --danger: #ef4444;
+    --background: #f9fafb;
+    --card-bg: #ffffff;
+    --text: #111827;
+    --text-secondary: #6b7280;
+    --border: #e5e7eb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    background: #e7f1ff;
+
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+}
+
+
+
+
+
+.theme_part button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+
+.main_container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+
+}
+
+header {
+    margin: 20px auto;
+    text-align: center;
+
+
+}
+
+
+
+
+
+.income_expense_overview {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.income_expense_overview>div {
+    background: var(--card-bg);
+    padding: 1.25rem;
+    border-radius: 8px;
+
+
+
+}
+
+
+.transactions_filter_add {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 10px 0;
+
+
+}
+
+
+.add_expense {
+    background-color: #111827;
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    text-transform: capitalize;
+
+}
+
+/* Hide arrows for Chrome, Safari, Edge */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+.exchange_money,
+.symbol_btn {
+    padding: 10px;
+    border-radius: 5px;
+    background: navy;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.flexx {
+    display: flex;
+}
+
+.income_expense_overview span {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.income_expense_overview p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+
+
+.total_balance {
+    border-top: 5px solid var(--primary);
+
+    p {
+        color: var(--primary);
+    }
+
+}
+
+
+
+
+
+.Current_balance {
+
+    border-top: 5px solid var(--success);
+
+    p {
+        color: var(--success);
+    }
+
+}
+
+.current_expense {
+
+    border-top: 5px solid var(--danger);
+
+    p {
+        color: var(--danger);
+    }
+
+}
+
+/* Transaction Section */
+.right_side {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+}
+
+.transactions_filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.transactions_filter h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.filter_cont {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.5rem 0.7rem;
+    background: var(--background);
+    border-radius: 6px;
+    cursor: pointer;
+    justify-content: center;
+}
+
+/* Search Area */
+.all_expense_search_download {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button {
+    border: none;
+    outline: none;
+}
+
+.addexpense {
+    padding: 5px;
+}
+
+.search_transaction {
+    flex: .5;
+    display: flex;
+    align-items: center;
+
+    background: var(--background);
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+
+}
+
+.search_transaction input {
+    border: none;
+    background: none;
+    outline: none;
+    width: 100%;
+    margin-left: 0.5rem;
+    font-size: 0.875rem;
+    height: 100%;
+    padding: .3rem;
+
+}
+
+.downlaod_btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    width: 100px;
+    height: 40px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    justify-content: center;
+}
+
+/* Table Design */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+thead {
+    background: var(--background);
+}
+
+th {
+    text-align: left;
+    padding: 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+td {
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--border);
+}
+
+tbody tr:hover {
+    background: var(--background);
+}
+
+/* Amount Styling */
+td[data-type="income"] {
+    color: var(--success);
+    font-weight: 500;
+}
+
+td[data-type="expense"] {
+    color: var(--danger);
+    font-weight: 500;
+}
+
+.cancont {
+    width: 100%;
+    height: 350px;
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    gap: 10px;
+    margin: 10px 0;
+    display: none;
+
+
+
+    button {
+
+        width: 100px;
+        height: 40px;
+        padding: 10px;
+
+        border-radius: 4px;
+        margin: 10px 5px;
+        background: #10b981;
+        color: #fff;
+        font-size: bold;
+        text-transform: capitalize;
+        cursor: pointer;
+    }
+}
+
+
+/* Action Button */
+td button {
+    padding: 0.4rem 0.75rem;
+    background: #fee2e2;
+    color: var(--danger);
+    border: none;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+/* Dark Theme */
+body.dark-theme {
+    background: #2c3e50;
+    --background: #222d43;
+    --card-bg: #1f2937;
+    --text: #f9fafb;
+    --text-secondary: #9ca3af;
+    --border: #374151;
+
+
+    input::placeholder {
+        color: #111;
+
+
+    }
+
+
+    .date::-webkit-datetime-edit-month-field,
+    .date::-webkit-datetime-edit-day-field,
+    .date::-webkit-datetime-edit-text,
+    .date::-webkit-datetime-edit-year-field {
+        color: #fff;
+
+    }
+
+
+    .add_transaction>input,
+    .add_transaction>input::placeholder {
+        color: #fff;
+
+    }
+
+    .user_Income {
+
+        background: #fff;
+        color: #111;
+
+    }
+
+    .search_expense,
+    .search_expense::placeholder {
+        color: #fff;
+    }
+
+}
+
+
+.date::-webkit-datetime-edit-month-field,
+.date::-webkit-datetime-edit-day-field,
+.date::-webkit-datetime-edit-text,
+.date::-webkit-datetime-edit-year-field {
+    color: #9ca2ac;
+
+}
+
+
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .main_container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .income_expense_overview {
+        grid-template-columns: 250px;
+    }
+
+    .all_expense_search_download {
+        flex-direction: column;
+
+        .search_transaction {
+            width: 100%;
+        }
+    }
+
+    .budget_exchange_symbol {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+
+    }
+
+    td {
+        padding: 0.5rem;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .transactions_filter_add {
+
+        gap: 10px;
+
+        h2 {
+            text-align: center;
+
+            width: 100%;
+        }
+    }
+
+
+
+    .cancont {
+        width: 100%;
+        height: 40%;
+        background: #fee2e2;
+    }
+
+    .add_transaction {
+        flex-direction: column;
+    }
+
+    .addexpense {
+        padding: 10px;
+    }
+}
+
+
+
+
+
+.add_transaction {
+    display: flex;
+    gap: 1rem;
+    padding: .5rem;
+    background-color: var(--background);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+    display: none;
+
+
+}
+
+
+.income_source {
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+.show {
+    display: flex;
+}
+
+.add_transaction input {
+    width: 100%;
+    /* max-width: 300px; */
+    padding: 0.5rem .5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    background: transparent;
+    color: #111;
+    border: 1px solid var(--text-secondary);
+    flex: .6;
+
+}
+
+
+
+.addexpense {
+    flex: .3;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.add_transaction input::placeholder {
+    color: #AAAAAA;
+}
+
+.add_transaction input:focus {
+    outline: none;
+    box-shadow: 0 0 4px rgba(108, 99, 255, 0.5);
+}
+
+.chart-container {
+    width: 250px;
+    /* Smaller width */
+    height: 250px;
+    /* Smaller height */
+    margin: 0 auto;
+    /* Center the chart */
+}
+
+
+.add_Income {
+    width: 200px;
+    height: 40px;
+    border-radius: 4px;
+    background: var(--success);
+    color: #fff;
+    margin: 10px 0;
+    cursor: pointer;
+
+
+}
+
+
+.budget_exchange_symbol {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+    gap: 10px;
+    outline: 0;
+    border: 0;
+
+    input {
+        padding: 10px;
+        width: 33%;
+        border: 0;
+        outline: 0;
+        border-radius: 5px;
+    }
+
+    input:focus {
+        border: 1px solid #111;
+    }
+}
+
+.input_balance {
+    display: flex;
+    align-items: center;
+    margin: 5px 5px;
+
+    max-width: 350px;
+    max-height: 50px;
+    opacity: 0;
+    transform: scale(0.95);
+    filter: blur(1px);
+    transition: opacity 0.5s ease-out, transform 0.4s ease, filter 0.4s ease;
+
+
+
+    input {
+        padding: 10px;
+        width: 80%;
+        outline: none;
+        border: none;
+
+        background: #fff;
+        color: #111;
+
+
+
+    }
+
+
+
+    input::placeholder {
+        color: #111;
+    }
+
+    button {
+        padding: 10px;
+        background: navy;
+        color: #fff;
+
+        cursor: pointer;
+
+    }
+}
+
+.opacity {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+    transition: opacity 0.4s ease-in, transform 0.3s ease-out, filter 0.3s ease-out;
+}
+
+
+/* For Tablets and Smaller Screens (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .main_container {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .income_expense_overview {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .transactions_filter_add {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .right_side {
+        padding: 1rem;
+        min-width: 280px;
+    }
+
+    .add_expense,
+    .add_Income {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .downlaod_btn {
+        width: 120px;
+    }
+}
+
+
+
+
+
+.currency {
+    display: flex;
+    width: 380px;
+
+    gap: 5px;
+
+
+
+    input {
+        padding: 15px;
+        /* text-transform: uppercase; */
+        border-radius: 5px;
+        border: none;
+        outline: none;
+
+    }
+
+    input:focus {
+        border: 1px solid #111;
+    }
+
+    button {
+        padding: 15px;
+        background: navy;
+        color: #fff;
+        border: 1px solid #fff;
+        border-radius: 5px;
+        width: 150px;
+    }
+}
+
+.exchangeRate_ui {
+
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+
+    max-width: 400px;
+    align-items: flex-start;
+}
+
+.rate_view {
+    padding: 5px;
+}
+
+.switch_exchangebtn {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.ex {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
